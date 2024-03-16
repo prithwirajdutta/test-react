@@ -1,11 +1,17 @@
-import { useState } from 'react'
-import './App.css'
-
+import {Routes,Route} from 'react-router-dom'
+import Home from './Components/Home'
+import ProductDesc from './Components/ProductDesc'
 function App() {
-  const [count, setCount] = useState(0)
+
+
   return (
     <>
-    <button onClick={()=>setCount((count)=>count+1)}>count is {count}</button>
+   <Routes>
+   <Route exact path='/' element={<Home/>}/>
+    <Route exact path='/product/:productId' element={<ProductDesc/>}/>
+    
+   </Routes>
+
     </>
   )
 }
